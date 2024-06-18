@@ -1,7 +1,7 @@
 let score = 0;
 let gameActive = false;
 let highScore = localStorage.getItem('highScore') || 0;
-let version = "1.0.3";
+let version = "1.0.4";
 const scoreElement = document.getElementById('score');
 const highScoreElement = document.getElementById('highScore');
 const startButton = document.getElementById('startButton');
@@ -13,7 +13,7 @@ const mouseClickSound1 = new Audio('/sounds/Minimalist11.ogg');
 const mouseClickSound2 = new Audio('/sounds/Minimalist4.ogg');
 const mouseClickSound3 = new Audio('/sounds/Minimalist4.ogg');
 const volumeSliderValue = document.getElementById('volumeSliderValue');
-const bgm = new Audio('https://foxstudiolabs.s3.eu-west-2.amazonaws.com/nothing-game/BGM.ogg'); // Had to offload it, otherwise the audio wouldn't load.
+const bgm = new Audio('https://foxstudiolabs.s3.eu-west-2.amazonaws.com/nothing-game/Nothing.ogg'); // Had to offload it, otherwise the audio wouldn't load.
 
 resetButton.hidden = true;
 gameover.hidden = true;
