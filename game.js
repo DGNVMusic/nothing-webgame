@@ -9,9 +9,9 @@ const gameover = document.getElementById('gameover');
 const finalscore = document.getElementById('finalscore');
 const gameActiveElement = document.getElementById('gameActive');
 const resetButton = document.getElementById('resetButton');
-const mouseClickSound1 = new Audio('/sounds/Minimalist11.ogg');
-const mouseClickSound2 = new Audio('/sounds/Minimalist4.ogg');
-const mouseClickSound3 = new Audio('/sounds/Minimalist4.ogg');
+const mouseClickSound1 = new Audio('./sounds/Minimalist11.ogg');
+const mouseClickSound2 = new Audio('./sounds/Minimalist4.ogg');
+const mouseClickSound3 = new Audio('./sounds/Minimalist4.ogg');
 const volumeSliderValue = document.getElementById('volumeSliderValue');
 const bgm = new Audio('https://foxstudiolabs.s3.eu-west-2.amazonaws.com/nothing-game/Nothing.ogg'); // Had to offload it, otherwise the audio wouldn't load.
 
@@ -81,3 +81,23 @@ function resetGame() {
 startButton.addEventListener('click', startGame);
 window.addEventListener('mousemove', endGame);
 window.addEventListener('keydown', endGame);
+
+if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+        title: 'Nothing',
+        artist: 'DGNVMusic',
+        album: 'Nothing',
+        artwork: [
+            { src: 'https://foxstudiolabs.s3.eu-west-2.amazonaws.com/nothing-game/nothing.jpg', sizes: '1024x1024', type: 'image/jpeg' },
+            { src: 'https://foxstudiolabs.s3.eu-west-2.amazonaws.com/nothing-game/nothing.jpg', sizes: '512x512', type: 'image/jpeg'},
+            { src: 'https://foxstudiolabs.s3.eu-west-2.amazonaws.com/nothing-game/nothing.jpg', sizes: '256x256', type: 'image/jpeg'},
+            { src: 'https://foxstudiolabs.s3.eu-west-2.amazonaws.com/nothing-game/nothing.jpg', sizes: '128x128', type: 'image/jpeg'}
+        ]
+    });
+    navigator.mediaSession.setActionHandler('play', function() { bgm.play(); });
+    navigator.mediaSession.setActionHandler('pause', function() { bgm.pause(); });
+    navigator.mediaSession.setActionHandler('stop', function() { bgm.pause(); });
+    navigator.mediaSession.setActionHandler('seekto', function(details) { bgm.currentTime = details.seekTime; });
+    navigator.mediaSession.setActionHandler('previoustrack', function() { bgm.currentTime = 0; });
+    navigator.mediaSession.setActionHandler('nexttrack', function() { bgm.currentTime = 0; });
+}

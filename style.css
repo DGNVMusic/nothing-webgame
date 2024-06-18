@@ -1,18 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 
-html, body, main {
-    background-color: #b1b1b1;
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+html, body {
+    background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
     color: #393939;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Quicksand", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
 }
 
 p {
@@ -49,9 +66,9 @@ footer {
     width: 100%;
     text-align: center;
     padding: 10px;
-    color: white;
+    color: #555555;
 }
 
 a {
-    color: #ffffff;
+    color: #555555;
 }
