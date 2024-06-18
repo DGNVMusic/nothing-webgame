@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+html, body, main {
+    background-color: #b1b1b1;
+    color: #393939;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Quicksand", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+.btn {
+    background-color: #393939;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    background-color: gray;
+}
+
+.top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+#musicButton{
+    top: 10px;
+}
+#volumeSlider{
+    top: 90px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+a {
+    color: #ffffff;
+}
