@@ -8,11 +8,11 @@ const gameover = document.getElementById('gameover');
 const finalscore = document.getElementById('finalscore');
 const gameActiveElement = document.getElementById('gameActive');
 const resetButton = document.getElementById('resetButton');
-const mouseClickSound1 = new Audio('sounds/Minimalist11.ogg');
-const mouseClickSound2 = new Audio('sounds/Minimalist4.ogg');
-const mouseClickSound3 = new Audio('sounds/Minimalist4.ogg');
+const mouseClickSound1 = new Audio('/sounds/Minimalist11.ogg');
+const mouseClickSound2 = new Audio('/sounds/Minimalist4.ogg');
+const mouseClickSound3 = new Audio('/sounds/Minimalist4.ogg');
 const volumeSliderValue = document.getElementById('volumeSliderValue');
-const bgm = new Audio('sounds/BGM.ogg');
+const bgm = new Audio('/sounds/BGM.ogg');
 
 resetButton.hidden = true;
 gameover.hidden = true;
