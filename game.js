@@ -1,7 +1,7 @@
 let score = 0;
 let gameActive = false;
 let highScore = localStorage.getItem('highScore') || 0;
-let version = "1.0.4";
+let version = "1.0.5";
 const scoreElement = document.getElementById('score');
 const highScoreElement = document.getElementById('highScore');
 const startButton = document.getElementById('startButton');
@@ -14,9 +14,24 @@ const mouseClickSound2 = new Audio('./sounds/Minimalist4.ogg');
 const mouseClickSound3 = new Audio('./sounds/Minimalist4.ogg');
 const volumeSliderValue = document.getElementById('volumeSliderValue');
 const bgm = new Audio('https://foxstudiolabs.s3.eu-west-2.amazonaws.com/nothing-game/Nothing.ogg'); // Had to offload it, otherwise the audio wouldn't load.
+const versionElement = document.getElementById('version');
+
 
 resetButton.hidden = true;
 gameover.hidden = true;
+
+//Check if the user is on a mobile device and if so, tell them that mobile devices are not targeted and might behave unexpectedly.
+if (/Mobi/.test(navigator.userAgent)) {
+    //create a div element with a notice id to inform the user that the game is not targeted for mobile devices.
+    const noticeElement = document.createElement('div');
+    noticeElement.id = 'notice';
+    document.getElementById('main').appendChild(noticeElement);
+    //alert the user that the game is not targeted for mobile devices.
+    alert('This game is not targeted for mobile devices and might behave unexpectedly.');
+    console.warn("[GAME] This game is not targeted to run on mobile browsers and might behave unexpectedly.");
+    noticeElement.textContent = 'Note: This game is not targeted for mobile devices and might behave unexpectedly. To get the best experience, please play on a desktop browser.';
+}
+
 
 highScoreElement.textContent = 'High Score: ' + highScore;
 
@@ -81,6 +96,7 @@ function resetGame() {
 startButton.addEventListener('click', startGame);
 window.addEventListener('mousemove', endGame);
 window.addEventListener('keydown', endGame);
+versionElement.textContent = 'Version: ' + version;
 
 if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
