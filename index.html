@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Do Nothing Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,13 +11,13 @@
 <body>
     <aside>
         <button id="musicButton" class="btn top-right" onclick="toggleMusic()">Music: Off</button>
-        <input class="top-right" type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.5" oninput="bgm.volume = this.value; mouseClickSound3.volume = this.value; mouseClickSound3.cloneNode().play();">
+        <input title="Background Music Volume" class="top-right" type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.5" oninput="bgm.volume = this.value; mouseClickSound3.volume = this.value; mouseClickSound3.cloneNode().play();">
     </aside>
     <main id="main">
         <noscript>You need to enable Javascript in order to start the Nothing Game</noscript>
         <h1>Do Nothing Game</h1>
-        <button id="startButton" class="btn">Start</button>
-        <button id="resetButton" class="btn" onclick="resetGame()">Restart</button>
+        <button type="button" id="startButton" class="btn">Start</button>
+        <button type="button" id="resetButton" class="btn" onclick="resetGame()">Restart</button>
         <p id="gameActive">Do <strong>nothing</strong></p>
         <p id="gameover">You did <strong>something</strong>!<br>Your final score: <span id="finalscore"></span></p>
         <p id="score">Score: 0</p>
