@@ -24,6 +24,7 @@ if (/Mobi/.test(navigator.userAgent)) {
     const noticeElement = document.createElement('div');
     noticeElement.id = 'notice';
     noticeElement.style.textAlign = 'center';
+    noticeElement.classList.add('notice');
     document.getElementById('main').appendChild(noticeElement);
     console.warn("[GAME] This game is not targeted to run on mobile browsers and might behave unexpectedly.");
     noticeElement.textContent = 'Note: This game is not targeted for mobile devices and might behave unexpectedly. To get the best experience, please play on a desktop browser.';
