@@ -1,7 +1,7 @@
 let score = 0;
 let gameActive = false;
 let highScore = localStorage.getItem('highScore') || 0;
-let version = "1.0.5";
+let version = "1.0.6";
 const scoreElement = document.getElementById('score');
 const highScoreElement = document.getElementById('highScore');
 const startButton = document.getElementById('startButton');

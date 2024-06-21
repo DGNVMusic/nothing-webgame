@@ -1,0 +1,5 @@
+# MacOS Finder files to ignore
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
